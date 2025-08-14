@@ -55,23 +55,25 @@ To get started with StoryCrafterAI, follow these steps:
     python -m venv venv
     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     ```
-
-3.  **Install the dependencies:**
+3. **Edit the environment file**
+    Edit the .env file and create a hugging face read API and paste it under the HUGGINGFACE_TOKEN
+   
+4.  **Install the dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
 
-4.  **Run the database migrations:**
+5.  **Run the database migrations:**
     ```bash
     python manage.py migrate
     ```
 
-5.  **Start the development server:**
+6.  **Start the development server:**
     ```bash
     python manage.py runserver
     ```
 
-6.  **Open your browser:** Navigate to `http://127.0.0.1:8000/` to start creating stories.
+7.  **Open your browser:** Navigate to `http://127.0.0.1:8000/` to start creating stories.
 
 ## Usage
 
