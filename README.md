@@ -13,7 +13,6 @@ StoryCrafterAI is a creative storytelling application that leverages the power o
 *   [License](#license)
 *   [Disclaimer](#disclaimer)
 *   [Contact](#contact)
-*   [Project Status](#project-status)
 
 ## Features
 
@@ -47,7 +46,7 @@ To get started with StoryCrafterAI, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/PranavDarshan/StoryCrafterAI-LangChain-Local.git
     cd StoryCrafterAI-LangChain-Local
     ```
 
@@ -113,7 +112,3 @@ This project is for educational and research purposes only. The stories and imag
 ## Contact
 
 For any questions or feedback, please open an issue on GitHub.
-
-## Project Status
-
-This project is currently in development. New features and improvements are being added regularly.
