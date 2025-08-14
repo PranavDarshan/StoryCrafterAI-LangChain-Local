@@ -1,0 +1,56 @@
+{% extends 'story_generator/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h3 class="card-title mb-0">Create Your Story</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data" id="story-form">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.user_prompt.id_for_label }}" class="form-label">
+                            <strong>Story Prompt</strong>
+                        </label>
+                        {{ form.user_prompt }}
+                        <div class="form-text">Describe the story you want to generate...</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.audio_file.id_for_label }}" class="form-label">
+                            <strong>Or Upload Audio (Optional)</strong>
+                        </label>
+                        {{ form.audio_file }}
+                        <div class="form-text">Upload an audio file instead of typing</div>
+                    </div>
+                    
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            {{ form.errors }}
+                        </div>
+                    {% endif %}
+                    
+                    <button type="submit" class="btn btn-primary btn-lg w-100" id="generate-btn">
+                        <span class="spinner-border spinner-border-sm d-none" id="spinner"></span>
+                        Generate Story & Images
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('story-form').addEventListener('submit', function() {
+    const btn = document.getElementById('generate-btn');
+    const spinner = document.getElementById('spinner');
+    
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Generating...';
+    spinner.classList.remove('d-none');
+});
+</script>
+{% endblock %}
